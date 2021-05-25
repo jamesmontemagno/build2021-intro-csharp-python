@@ -1,0 +1,115 @@
+#!markdown
+
+Hello World!
+
+#!csharp
+
+void SayName(string name) => Console.WriteLine($"Hello {name}");
+
+SayName("James");
+SayName("Brian");
+SayName("Christopher");
+
+#!markdown
+
+## Planet
+
+A planet has a `Name` and `Distance` from the sun in million of miles.
+
+#!csharp
+
+// Describe a planet as a C# record
+public record Planet(string Name, double Distance);
+
+#!markdown
+
+## Planet Data
+
+* Mercury - 36.0
+* Venus - 67.2 
+* Earth - 93.0
+* Mars - 141.6
+* Jupiter - 483.8 
+* Saturn - 886.7
+* Uranus - 1,784.0
+* Neptune - 2,794.4
+* Pluto - 3,670.0
+
+#!csharp
+
+// Let's turn planets into C# classes
+var mercury = new Planet("Mercury", 36.0);
+var venus = new Planet("Venus", 67.2);
+var earth = new Planet("Earth", 93.0);
+var mars = new Planet("Mars", 141.6);
+var jupiter = new Planet("Jupiter", 483.8);
+var saturn = new Planet("Saturn", 886.7);
+var uranus = new Planet("Uranus", 1784.0);
+var neptune = new Planet("Neptune", 2794.4);
+var pluto = new Planet("Pluto", 3670.0);
+
+#!markdown
+
+## Distance between planets
+
+We can calculate distance by `subtracting` the distances between two planets.
+
+#!csharp
+
+// Distance between Earth and Mars
+Console.WriteLine(mars.Distance - earth.Distance);
+
+#!markdown
+
+## Loops
+We can loop or "iterate" through each planet by creating a `List` of planets and comparing them to earth's distance.
+
+#!csharp
+
+// Create list of planets
+var planets = new List<Planet>();
+planets.AddRange(new [] {mercury, venus, mars, jupiter, saturn, uranus, neptune, pluto});
+
+foreach(var planet in planets)
+{
+    Console.WriteLine(planet.Name);
+    Console.WriteLine(earth.Distance - planet.Distance);
+}
+
+#!markdown
+
+## C# Math
+C# includes `System.Math` that provides constant and static methods for trigonometric, logarithimic, and otehr common mathematical funcations:
+* `Abs` - Absolute value
+* `Clamp` - Clamps a value between a min and max
+* `Cos` - Returns the cosine of a specified angle
+* `Exp` - A number raised to a specific power
+* `Max` - Returns the larger of two specified numbers
+* `Min` - Returns the smaller of two specified numbers
+* `Sin` - The sine of an angle
+* `Sqrt` - The square root of a specified number.
+* Many more!
+
+#!csharp
+
+var value1 = -1.02;
+var value2 = 1.02;
+
+Console.WriteLine($"Abs: {Math.Abs(value1)}");
+Console.WriteLine($"Min: {Math.Min(value1, value2)}");
+Console.WriteLine($"Max: {Math.Max(value1, value2)}");
+
+#!markdown
+
+## Absolute Distances from Earth
+
+Let's use `System.Math` to ensure our numbers are always positive.
+
+#!csharp
+
+// Let's use Math.Abs
+foreach(var planet in planets)
+{
+    var distance = earth.Distance - planet.Distance;
+    Console.WriteLine($"{planet.Name} is {Math.Abs(distance)} million miles away");
+}
