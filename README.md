@@ -1,0 +1,2 @@
+# build2021-intro-csharp-python
+C# and Python are two of the most popular programming languages for developers in all areas of tech. From making web apps to doing machine learning, you can't go wrong with either of them! James and Christopher are here to introduce you to these two powerful languages, explore some “Hello, World” examples, and show you the docs, tools, and frameworks that can help students and beginners get started on coding today!
